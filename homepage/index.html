@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="container text-center my-4">
+        <h1>Welcome to My Homepage</h1>
+        <p>Hi, I'm [Your Name]! I'm passionate about [your interests].</p>
+    </header>
+
+    <nav class="container mb-4">
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="hobbies.html">Hobbies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container text-center">
+        <section class="mb-4">
+            <h2>About Me</h2>
+            <p>I'm a [student/developer/enthusiast] interested in [your interests].</p>
+        </section>
+
+        <section class="mb-4">
+            <button id="turnOnBtn" class="btn btn-warning me-2">Turn on the light</button>
+
+            <img id="myImage" src="images/pic_bulboff.gif" alt="Light bulb" style="width:100px;">
+
+            <button id="turnOffBtn" class="btn btn-secondary ms-2">Turn off the light</button>
+        </section>
+    </main>
+
+    <footer class="container text-center mt-4">
+        <p>&copy; 2025 My Homepage</p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.getElementById("turnOnBtn").addEventListener("click", function () {
+            document.getElementById("myImage").src = "images/pic_bulbon.gif";
+        });
+
+        document.getElementById("turnOffBtn").addEventListener("click", function () {
+            document.getElementById("myImage").src = "images/pic_bulboff.gif";
+        });
+    </script>
+</body>
+</html>

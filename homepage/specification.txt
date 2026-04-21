@@ -1,0 +1,27 @@
+10 HTML Tags Used:
+- <nav>
+- <ul>
+- <li>
+- <a>
+- <div>
+- <h1>, <h2>, <h3>
+- <p>
+- <img>
+- <form>
+- <input>
+
+5 CSS Properties Used:
+- font-family
+- background-color
+- margin
+- box-shadow
+- transform
+
+JavaScript Usage:
+- Added form validation and submission handling.
+- Implemented card hover animations.
+
+Bootstrap Usage:
+- Used Bootstrap's navbar for navigation.
+- Utilized Bootstrap's card components for content sections.
+- Applied Bootstrap's grid system for responsive layout.

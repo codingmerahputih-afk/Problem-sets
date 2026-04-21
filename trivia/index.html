@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trivia!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <!-- Part 1: Multiple Choice -->
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <h3>What is the capital of France?</h3>
+
+        <div class="choices" id="q1">
+          <button class="mc" data-correct="false">New York</button>
+          <button class="mc" data-correct="false">Tokyo</button>
+          <button class="mc" data-correct="true">Paris</button>
+        </div>
+
+        <p class="feedback" id="feedback1"></p>
+      </div>
+
+      <!-- Part 2: Free Response -->
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <h3>What is 5 + 3?</h3>
+
+        <div class="free">
+          <input type="text" id="freeResponse" placeholder="Type your answer…" />
+          <button id="checkFree">Submit</button>
+        </div>
+
+        <p class="feedback" id="feedback2"></p>
+      </div>
+    </div>
+
+    <script>
+      // Utility helpers
+      function setFeedback(el, msg) {
+        el.textContent = msg;
+      }
+
+      function resetButtonColors(container) {
+        container.querySelectorAll('button').forEach(btn => {
+          btn.style.backgroundColor = '';
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Multiple-choice logic
+        const q1 = document.getElementById('q1');
+        const feedback1 = document.getElementById('feedback1');
+
+        q1.querySelectorAll('.mc').forEach(btn => {
+          btn.addEventListener('click', () => {
+            resetButtonColors(q1);
+            const isCorrect = btn.getAttribute('data-correct') === 'true';
+            btn.style.backgroundColor = isCorrect ? 'green' : 'red';
+            setFeedback(feedback1, isCorrect ? 'Correct!' : 'Incorrect');
+          });
+        });
+
+        // Free-response logic
+        const input = document.getElementById('freeResponse');
+        const checkFree = document.getElementById('checkFree');
+        const feedback2 = document.getElementById('feedback2');
+
+        checkFree.addEventListener('click', () => {
+          const value = input.value.trim();
+
+          // Accept "8" (and also numeric 8)
+          const correct = value === '8';
+
+          input.style.backgroundColor = correct ? 'green' : 'red';
+          setFeedback(feedback2, correct ? 'Correct!' : 'Incorrect');
+        });
+      });
+    </script>
+  </body>
+</html>
